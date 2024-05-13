@@ -2,19 +2,19 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  background-color: #191919;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #191919;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 32px;
-}
-h2 {
   font-size: 3rem;
 }
-h3 {
+h2 {
   font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
 }
 
 main {
@@ -23,6 +23,11 @@ main {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.img-icon {
+  height: 80px;
+  width: auto;
 }
 
 /* navbar */
@@ -91,7 +96,7 @@ main {
   position: absolute;
   height: 9px;
   width: 100%;
-  background: #ffffff;
+  background: #191919;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -133,8 +138,10 @@ main {
 }
 
 .screen-center {
-  top: 50%;
+  top: 40%;
   position: fixed;
+  clear: both;
+  width: auto;
 }
 
 .home-content {
@@ -143,9 +150,11 @@ main {
   position: relative;
   float: left;
   top: 50%;
-  left: 42.5%;
+  left: 50%;
   transform: translate(-50%, -50%);
   vertical-align: middle;
+  position: fixed;
+  width: 75%;
 }
 
 .home-content a {
@@ -154,6 +163,19 @@ main {
   padding: 6px 12px;
   border-radius: 5px;
   font-weight: 700;
+}
+
+.home-content .desc {
+  font-size: 24px;
+}
+
+.home-content .sub-title {
+  font-size: 32px;
+}
+
+.page-name{
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .about-card {
@@ -173,7 +195,7 @@ main {
 }
 
 .footer a {
-  color: #f0f0f0;
+  color: #191919;
   text-decoration: none;
   font-weight: 700;
   font-size: 16px;
