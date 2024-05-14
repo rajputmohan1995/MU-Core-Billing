@@ -28,6 +28,7 @@ main {
 .img-icon {
   height: 80px;
   width: auto;
+  border-radius: 50%;
 }
 
 /* navbar */
@@ -114,8 +115,11 @@ main {
   border-radius: 1rem;
 }
 
-#navbar span:hover {
-  background-color: #818181;
+.main-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #navbar span:nth-child(1) {
@@ -147,35 +151,43 @@ main {
 .home-content {
   font-size: 36px;
   text-transform: none;
-  position: relative;
-  float: left;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   vertical-align: middle;
-  position: fixed;
-  width: 75%;
 }
 
 .home-content a {
   color: #000000;
   background-color: #cfcfcf;
-  padding: 6px 12px;
+  padding: 10px 20px;
   border-radius: 5px;
-  font-weight: 700;
+  font-size: 25px;
 }
 
 .home-content .desc {
   font-size: 24px;
+  padding-bottom: 20px;
 }
 
 .home-content .sub-title {
   font-size: 32px;
 }
 
-.page-name{
+.page-name {
   font-size: 32px;
   font-weight: bold;
+}
+
+.navbar-link {
+  text-transform: none;
+  vertical-align: middle;
+}
+.navbar-link a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #191919;
+}
+.navbar-link a:hover {
+  background-color: #cfcfcf;
+  cursor: pointer;
 }
 
 .about-card {
@@ -185,12 +197,11 @@ main {
   box-shadow: 7px 6px 2px 5px #888;
 }
 
+#linkHome {
+  margin-top: 7rem !important;
+}
+
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
   z-index: 99;
 }
 
