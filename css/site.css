@@ -223,7 +223,6 @@ main {
 
 .big-divider {
   border-bottom: 3px solid;
-  margin: 1rem 5rem;
   border-radius: 10px;
 }
 
@@ -285,10 +284,6 @@ main {
 .about-content p {
   font-size: 20px;
   margin-bottom: 8px;
-}
-
-.row {
-  margin: 1rem 5rem;
 }
 
 .copy_right_scroll {
@@ -356,5 +351,14 @@ main {
   }
   .sidenav a {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    text-align: center !important;
+  }
+  .text-end {
+    text-align: center !important;
   }
 }
