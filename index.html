@@ -12,6 +12,8 @@
       name="description"
       content="MU Core Billing - Free Windows Billing Application"
     />
+    <link rel="icon" href="images/MU Logo - Billing App.png">
+
     <link
       rel="canonical"
       href="https://rajputmohan1995.github.io/MU-Core-Billing"
@@ -169,7 +171,13 @@
             <div class="row row-cols-1 row-cols-md-2 g-4">
               <div class="col">
                 <div class="card border-secondary">
-                  <img src="images/download.png" class="card-img-top" alt="..." />
+                  <img
+                    src="images/download.png"
+                    class="card-img-top"
+                    alt="missing download application image"
+                    data-img-no="0"
+                    data-title="Download"
+                  />
                   <div class="card-body">
                     <h3 class="card-title text-center fw-bold">
                       <u>Download</u>
@@ -183,7 +191,13 @@
               </div>
               <div class="col">
                 <div class="card border-secondary">
-                  <img src="..." class="card-img-top" alt="..." />
+                  <img
+                    src="images/login_and_setup.png"
+                    class="card-img-top"
+                    alt="missing login & setup image"
+                    data-img-no="1"
+                    data-title="Login & Setup"
+                  />
                   <div class="card-body">
                     <h3 class="card-title text-center fw-bold">
                       <u>Login & Setup</u>
@@ -197,7 +211,13 @@
               </div>
               <div class="col">
                 <div class="card border-secondary">
-                  <img src="..." class="card-img-top" alt="..." />
+                  <img
+                    src="images/customers_and_products.png"
+                    class="card-img-top"
+                    alt="missage customers & products image"
+                    data-img-no="2"
+                    data-title="Customers & Products"
+                  />
                   <div class="card-body">
                     <h3 class="card-title text-center fw-bold">
                       <u>Customers & Products</u>
@@ -211,7 +231,13 @@
               </div>
               <div class="col">
                 <div class="card border-secondary">
-                  <img src="..." class="card-img-top" alt="..." />
+                  <img
+                    src="images/generate-bill.png"
+                    class="card-img-top"
+                    alt="missing generate bill image"
+                    data-img-no="3"
+                    data-title="Generate Invoices"
+                  />
                   <div class="card-body">
                     <h3 class="card-title text-center fw-bold">
                       <u>Generate Invoices</u>
@@ -223,15 +249,46 @@
                   </div>
                 </div>
               </div>
+
               <div class="col">
                 <div class="card border-secondary">
-                  <img src="..." class="card-img-top" alt="..." />
+                  <img
+                    src="images/all-grids.png"
+                    class="card-img-top"
+                    alt="missing all grids image"
+                    data-img-no="4"
+                    data-title="View/Edit Saved Information"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title text-center fw-bold">
+                      <u>View/Edit Saved Information</u>
+                    </h3>
+                    <p class="card-text desc text-start">
+                      Separate grids for all saved informations.
+                      <br />
+                      Simply double-click on the record to view/edit saved
+                      information (Customers/Products/Invoices).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-secondary">
+                  <img
+                    src="images/latest-download.png"
+                    class="card-img-top"
+                    alt="missing latest downloag image"
+                    data-img-no="5"
+                    data-title="Regular Updates"
+                  />
                   <div class="card-body">
                     <h3 class="card-title text-center fw-bold">
                       <u>Regular Updates</u>
                     </h3>
                     <p class="card-text desc text-start">
-                      You can check for regular updates for your application
+                      You can check for regular updates & download the latest
+                      application.
                     </p>
                   </div>
                 </div>
@@ -291,12 +348,16 @@
             <div class="col-md-6 text-center" id="navbarFooter">
               <a
                 href="javascript:void(0);"
-                data-bs-toggle="modal"
-                data-bs-target="#popupTermsOfService"
                 class="underline-effect"
+                id="btnViewTermsOfService"
                 >Terms of Service</a
               >
-              <a href="#" class="underline-effect">Privacy Policy</a>
+              <a
+                href="javascript:void(0);"
+                id="btnViewPrivacyPolicy"
+                class="underline-effect"
+                >Privacy Policy</a
+              >
             </div>
 
             <div class="col-md-3 text-end" id="socialIcons">
@@ -329,73 +390,470 @@
       </div>
       <!-- footer -->
 
+      <!-- Vertically centered modal -->
       <div
-        class="modal modal-dialog modal-xl"
+        class="modal modal-xl fade"
+        id="how-it-works-img-viewer"
+        aria-labelledby="how-it-works-img-viewer"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">
+                How It Works
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                id="fullScreenImage"
+                class="d-block w-100 border border-secondary"
+                src="images/download.png"
+                alt="missing download image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal modal-xl popup"
         id="popupTermsOfService"
         aria-labelledby="popupTermsOfService"
+        aria-modal="true"
+        role="dialog"
       >
-        <h2>Terms of Service</h2>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Terms of Service</b></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                These Terms of Service ("Terms") govern your access to and use
+                of the MU Core Billing website and software application (the
+                "Service") operated by MU Core Billing ("us", "we", or "our").
+                <br />
+                By accessing or using the Service, you agree to be bound by
+                these Terms. If you disagree with any part of the Terms, then
+                you may not access the Service.
+              </p>
 
-        <p>
-          These Terms of Service ("Terms") govern your access to and use of the
-          MU Core Billing website and software application (the "Service")
-          operated by MU Core Billing ("us", "we", or "our").
-          <br />
-          By accessing or using the Service, you agree to be bound by these
-          Terms. If you disagree with any part of the Terms, then you may not
-          access the Service.
-        </p>
+              <ol>
+                <li>
+                  <b style="text-decoration: underline">Use of the Service</b>
+                  <ol>
+                    <li>
+                      License: Subject to these Terms, we grant you a limited,
+                      non-exclusive, non-transferable, and revocable license to
+                      use the Service for your personal or business purposes.
+                    </li>
+                    <li>
+                      Access: You are responsible for providing and maintaining
+                      all equipment and software necessary to access the
+                      Service.
+                    </li>
+                    <li>
+                      Restrictions: You agree not to: Modify, adapt, or
+                      reverse-engineer the Service; Use the Service for any
+                      unlawful purpose or in violation of any applicable laws;
+                      Attempt to gain unauthorized access to the Service or its
+                      related systems or networks.
+                    </li>
+                  </ol>
+                </li>
 
-        <p></p>
+                <li>
+                  <b style="text-decoration: underline">User Accounts</b>
+                  <ol>
+                    <li>
+                      Registration: In order to access certain features of the
+                      Service, you may be required to create an account. You
+                      agree to provide accurate and complete information when
+                      creating your account.
+                    </li>
+                    <li>
+                      Security: You are responsible for maintaining the security
+                      of your account and password. You agree not to share your
+                      account credentials with any third party.
+                    </li>
+                    <li>
+                      Termination: We reserve the right to suspend or terminate
+                      your account at any time for any reason, without prior
+                      notice or liability.
+                    </li>
+                  </ol>
+                </li>
 
-        <h3>1. Use of the Service</h3>
+                <li>
+                  <b style="text-decoration: underline">Privacy</b>
+                  <ol>
+                    <li>
+                      Privacy Policy: Your use of the Service is also subject to
+                      our Privacy Policy, which governs how we collect, use, and
+                      disclose your personal information.
+                    </li>
+                  </ol>
+                </li>
 
-        <p>
-          1.1 License: Subject to these Terms, we grant you a limited,
-          non-exclusive, non-transferable, and revocable license to use the
-          Service for your personal or business purposes. 1.2 Access: You are
-          responsible for providing and maintaining all equipment and software
-          necessary to access the Service. 1.3 Restrictions: You agree not to:
-          Modify, adapt, or reverse-engineer the Service; Use the Service for
-          any unlawful purpose or in violation of any applicable laws; Attempt
-          to gain unauthorized access to the Service or its related systems or
-          networks. 2. User Accounts 2.1 Registration: In order to access
-          certain features of the Service, you may be required to create an
-          account. You agree to provide accurate and complete information when
-          creating your account. 2.2 Security: You are responsible for
-          maintaining the security of your account and password. You agree not
-          to share your account credentials with any third party. 2.3
-          Termination: We reserve the right to suspend or terminate your account
-          at any time for any reason, without prior notice or liability. 3.
-          Privacy 3.1 Privacy Policy: Your use of the Service is also subject to
-          our Privacy Policy, which governs how we collect, use, and disclose
-          your personal information. 4. Intellectual Property 4.1 Ownership: All
-          rights, title, and interest in and to the Service, including all
-          intellectual property rights, are and will remain the exclusive
-          property of [Your Company Name]. 4.2 Feedback: If you provide us with
-          any feedback or suggestions regarding the Service, you grant us a
-          non-exclusive, royalty-free, perpetual, irrevocable, and fully
-          sublicensable right to use, reproduce, modify, adapt, publish,
-          translate, create derivative works from, distribute, and display such
-          feedback. 5. Disclaimer of Warranties 5.1 As Is: The Service is
-          provided on an "as is" and "as available" basis, without any
-          warranties of any kind, either express or implied. 5.2 Use at Your Own
-          Risk: You agree to use the Service at your own risk. We disclaim all
-          warranties, express or implied, including but not limited to
-          warranties of merchantability, fitness for a particular purpose, and
-          non-infringement. 6. Limitation of Liability 6.1 Exclusion of Damages:
-          In no event shall [Your Company Name] be liable for any indirect,
-          incidental, special, consequential, or punitive damages, including
-          without limitation lost profits, lost data, or business interruption.
-          7. Governing Law 7.1 Jurisdiction: These Terms shall be governed by
-          and construed in accordance with the laws of [Your Country], without
-          regard to its conflict of law provisions. 8. Changes to the Terms 8.1
-          Modification: We reserve the right, at our sole discretion, to modify
-          or replace these Terms at any time. If a revision is material, we will
-          provide at least 30 days' notice prior to any new terms taking effect.
-          9. Contact Us If you have any questions about these Terms, please
-          contact us at rajputmohan1995@gmail.com.
-        </p>
+                <li>
+                  <b style="text-decoration: underline"
+                    >Intellectual Property</b
+                  >
+                  <ol>
+                    <li>
+                      Ownership: All rights, title, and interest in and to the
+                      Service, including all intellectual property rights, are
+                      and will remain the exclusive property of MU Core Billing.
+                    </li>
+                    <li>
+                      Feedback: If you provide us with any feedback or
+                      suggestions regarding the Service, you grant us a
+                      non-exclusive, royalty-free, perpetual, irrevocable, and
+                      fully sublicensable right to use, reproduce, modify,
+                      adapt, publish, translate, create derivative works from,
+                      distribute, and display such feedback.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >Disclaimer of Warranties</b
+                  >
+                  <ol>
+                    <li>
+                      As Is: The Service is provided on an "as is" and "as
+                      available" basis, without any warranties of any kind,
+                      either express or implied.
+                    </li>
+                    <li>
+                      Use at Your Own Risk: You agree to use the Service at your
+                      own risk. We disclaim all warranties, express or implied,
+                      including but not limited to warranties of
+                      merchantability, fitness for a particular purpose, and
+                      non-infringement.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >Limitation of Liability</b
+                  >
+                  <ol>
+                    <li>
+                      Exclusion of Damages: In no event shall MU Core Billing be
+                      liable for any indirect, incidental, special,
+                      consequential, or punitive damages, including without
+                      limitation lost profits, lost data, or business
+                      interruption.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline">Governing Law</b>
+                  <ol>
+                    <li>
+                      Jurisdiction: These Terms shall be governed by and
+                      construed in accordance with the laws of India, without
+                      regard to its conflict of law provisions.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline">Changes to the Terms</b>
+                  <ol>
+                    <li>
+                      Modification: We reserve the right, at our sole
+                      discretion, to modify or replace these Terms at any time.
+                      If a revision is material, we will provide at least 30
+                      days' notice prior to any new terms taking effect.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline">Contact Us</b>
+                  <ol>
+                    <li>
+                      If you have any questions about these Terms, please
+                      contact us at rajputmohan1995@gmail.com.
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal modal-xl popup"
+        id="popupPrivacyPolicy"
+        aria-labelledby="popupPrivacyPolicy"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Privacy Policy</b></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Effective Date: 18-May-2024
+                <br />
+                MU Core Billing ("we", "us", or "our") operates the
+                https://rajputmohan1995.github.io/MU-Core-Billing and the
+                associated software application (the "Service"). This Privacy
+                Policy explains how we collect, use, disclose, and protect your
+                information when you use our Service.
+                <br />
+                By using the Service, you agree to the collection and use of
+                information in accordance with this policy.
+              </p>
+
+              <ol>
+                <li>
+                  <b style="text-decoration: underline"
+                    >Information We Collect</b
+                  >
+                  <ol>
+                    <li>
+                      Personal Information: When you register for an account or
+                      use the Service, we may collect personal information such
+                      as your name, email address, company name, billing
+                      information, and any other information you provide.
+                    </li>
+                    <li>
+                      Usage Data: We may collect information on how the Service
+                      is accessed and used ("Usage Data"). This Usage Data may
+                      include information such as your computer’s Internet
+                      Protocol (IP) address, browser type, browser version, the
+                      pages of our Service that you visit, the time and date of
+                      your visit, the time spent on those pages, and other
+                      diagnostic data.
+                    </li>
+                    <li>
+                      Cookies and Tracking Technologies: We use cookies and
+                      similar tracking technologies to track the activity on our
+                      Service and hold certain information. Cookies are files
+                      with small amounts of data which may include an anonymous
+                      unique identifier. You can instruct your browser to refuse
+                      all cookies or to indicate when a cookie is being sent.
+                      However, if you do not accept cookies, you may not be able
+                      to use some portions of our Service.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >How We Use Your Information</b
+                  >
+                  <ol>
+                    <li>
+                      To Provide and Maintain the Service: We use the collected
+                      data to provide and maintain our Service, including
+                      customer support and to monitor the usage of our Service.
+                    </li>
+                    <li>
+                      To Improve the Service: We use the data to understand how
+                      our Service is used, to develop new features, and to
+                      improve the overall user experience.
+                    </li>
+                    <li>
+                      To Communicate with You: We may use your personal
+                      information to contact you with newsletters, marketing or
+                      promotional materials, and other information that may be
+                      of interest to you. You can opt-out of receiving any, or
+                      all, of these communications from us by following the
+                      unsubscribe link or instructions provided in any email we
+                      send.
+                    </li>
+                    <li>
+                      To Process Payments: We use your billing information to
+                      process transactions for any paid features of the Service.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >Information Sharing and Disclosure</b
+                  >
+                  <ol>
+                    <li>
+                      Service Providers: We may employ third-party companies and
+                      individuals to facilitate our Service ("Service
+                      Providers"), to provide the Service on our behalf, to
+                      perform Service-related services, or to assist us in
+                      analyzing how our Service is used. These third parties
+                      have access to your personal information only to perform
+                      these tasks on our behalf and are obligated not to
+                      disclose or use it for any other purpose.
+                    </li>
+                    <li>
+                      Legal Requirements: We may disclose your personal
+                      information in the good faith belief that such action is
+                      necessary to:
+                      <ul style="list-style-type: circle">
+                        <li>Comply with a legal obligation;</li>
+                        <li>
+                          Protect and defend the rights or property of MU Core
+                          Billing;
+                        </li>
+                        <li>
+                          Prevent or investigate possible wrongdoing in
+                          connection with the Service;
+                        </li>
+                        <li>
+                          Protect the personal safety of users of the Service or
+                          the public;
+                        </li>
+                        <li>Protect against legal liability.</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >Security of Your Information</b
+                  >
+                  <ol>
+                    <li>
+                      We are committed to protecting the security of your
+                      information. We use various security technologies and
+                      procedures to help protect your personal information from
+                      unauthorized access, use, or disclosure. However, no
+                      method of transmission over the Internet, or method of
+                      electronic storage, is 100% secure. Therefore, while we
+                      strive to use commercially acceptable means to protect
+                      your personal information, we cannot guarantee its
+                      absolute security.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >Your Data Protection Rights</b
+                  >
+                  <ol>
+                    <li>
+                      Depending on your location, you may have the following
+                      rights regarding your personal information:
+                      <ul style="list-style-type: circle">
+                        <li>
+                          The right to access – You have the right to request
+                          copies of your personal data.
+                        </li>
+                        <li>
+                          The right to rectification – You have the right to
+                          request that we correct any information you believe is
+                          inaccurate or complete information you believe is
+                          incomplete.
+                        </li>
+                        <li>
+                          The right to erasure – You have the right to request
+                          that we erase your personal data, under certain
+                          conditions.
+                        </li>
+                        <li>
+                          The right to restrict processing – You have the right
+                          to request that we restrict the processing of your
+                          personal data, under certain conditions.
+                        </li>
+                        <li>
+                          The right to object to processing – You have the right
+                          to object to our processing of your personal data,
+                          under certain conditions.
+                        </li>
+                        <li>
+                          The right to data portability – You have the right to
+                          request that we transfer the data that we have
+                          collected to another organization, or directly to you,
+                          under certain conditions.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      If you make a request, we have one month to respond to
+                      you. If you would like to exercise any of these rights,
+                      please contact us at our contact information below.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline">Links to Other Sites</b>
+                  <ol>
+                    <li>
+                      Our Service may contain links to other sites that are not
+                      operated by us. If you click a third-party link, you will
+                      be directed to that third party’s site. We strongly advise
+                      you to review the Privacy Policy of every site you visit.
+                      We have no control over and assume no responsibility for
+                      the content, privacy policies, or practices of any
+                      third-party sites or services.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline"
+                    >Changes to This Privacy Policy</b
+                  >
+                  <ol>
+                    <li>
+                      We may update our Privacy Policy from time to time. We
+                      will notify you of any changes by posting the new Privacy
+                      Policy on this page. You are advised to review this
+                      Privacy Policy periodically for any changes. Changes to
+                      this Privacy Policy are effective when they are posted on
+                      this page.
+                    </li>
+                  </ol>
+                </li>
+
+                <li>
+                  <b style="text-decoration: underline">Contact Us</b>
+                  <ol>
+                    <li>
+                      If you have any questions about this Privacy Policy,
+                      please contact us at:
+                      <br />
+                      Email: rajputmohan1995@gmail.com.
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- scripts starts from here -->

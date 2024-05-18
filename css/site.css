@@ -343,6 +343,26 @@ main {
   font-size: 20px;
 }
 
+.card .card-img-top {
+  max-height: 400px;
+  width: auto;
+  cursor: pointer;
+}
+.popup ol {
+  counter-reset: item;
+}
+.popup ol li {
+  display: block;
+}
+.popup ol li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+}
+
+.popup ul li:before {
+  content: '*';
+}
+
 /* Medai Query */
 
 @media screen and (max-height: 450px) {
